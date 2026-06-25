@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video - VID65 Share</title>
+    
+    <!-- Dynamic SEO Meta Tags Placeholders -->
+    <meta id="metaDesc" name="description" content="Watch this video on VID65 Share.">
+    <meta id="metaOgTitle" property="og:title" content="Watch Video - VID65 Share">
+    <meta id="metaOgDesc" property="og:description" content="Watch and share high-quality video content seamlessly.">
+    <meta id="metaOgImage" property="og:image" content="https://vid65sx.netlify.app/default-meta.jpg">
+    <meta id="metaOgImageSecure" property="og:image:secure_url" content="https://vid65sx.netlify.app/default-meta.jpg">
+    <meta id="metaOgImageAlt" property="og:image:alt" content="Video preview thumbnail for VID65 Share">
+    <meta id="metaOgImageType" property="og:image:type" content="image/jpeg">
+    <meta id="metaOgImageWidth" property="og:image:width" content="1200">
+    <meta id="metaOgImageHeight" property="og:image:height" content="630">
+    <meta id="metaOgUrl" property="og:url" content="https://vid65sx.netlify.app/watch.html">
+    <link id="linkCanonical" rel="canonical" href="https://vid65sx.netlify.app/watch.html">
+    <link id="linkImageSrc" rel="image_src" href="https://vid65sx.netlify.app/default-meta.jpg">
+    <meta id="metaOgVideoUrl" property="og:video:url" content="">
+    <meta id="metaOgVideoSecureUrl" property="og:video:secure_url" content="">
+    <meta id="metaOgVideoType" property="og:video:type" content="video/mp4">
+    <meta id="metaOgVideoWidth" property="og:video:width" content="1280">
+    <meta id="metaOgVideoHeight" property="og:video:height" content="720">
+    <meta property="og:type" content="video.other">
+    <meta property="og:site_name" content="VID65 Share">
+
+    <!-- Twitter Meta -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@vid65share">
+    <meta property="twitter:creator" content="@vid65share">
+    <meta property="twitter:url" content="https://vid65sx.netlify.app/watch.html">
+    <meta property="twitter:title" content="Watch Video - VID65 Share">
+    <meta property="twitter:description" content="Watch and share high-quality video content seamlessly.">
+    <meta property="twitter:image" content="https://vid65sx.netlify.app/default-meta.jpg">
+    <meta property="twitter:image:alt" content="Video preview thumbnail for VID65 Share">
+    
+    <!-- Google Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Style Sheet Link (Root Folder) -->
+    <link rel="stylesheet" href="style.css">
+
+     <script src="https://clenchinfer.com/ca/2e/cd/ca2ecd58bb6ec3fe1cd7d692d34ede5d.js"></script>
+    <script src="https://clenchinfer.com/2c/3d/ef/2c3deff26d6e508fb8fd62636058faf9.js"></script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-play text-danger"></i> VID65 <span>Share</span>
+            </a>
+            <div class="search-box">
+                <input type="text" id="watchSearchInput" placeholder="Search videos...">
+                <button id="watchSearchButton" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li><a href="sitemap.html"><i class="fa-solid fa-sitemap"></i> Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Layout Container (YouTube Split Style) -->
+    <div class="watch-layout">
+        
+        <!-- Left Column: Custom Video Player & Meta Info -->
+        <main class="video-section">
+            
+            <!-- Custom Video Player Wrapper -->
+            <div class="player-wrapper" id="playerWrapper">
+                
+                <!-- Initial Poster / Thumbnail Overlay State -->
+                <div class="poster-overlay" id="posterOverlay">
+                    <div class="poster-top">
+                        <img id="playerPoster" src="default-meta.jpg" alt="Video Thumbnail">
+                        <button class="custom-play-btn" id="overlayPlayBtn" aria-label="Play Video">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading Spinner State -->
+                <div class="loading-spinner" id="loadingSpinner">
+                    <div class="spinner"></div>
+                </div>
+
+                <!-- Real HTML5 Video Object -->
+                <video id="mainVideo" poster="default-meta.jpg" preload="metadata" playsinline>
+                    <!-- Source added dynamically via JS -->
+                </video>
+
+                <!-- End-of-video suggestion row -->
+                <section class="end-suggested-section" id="endSuggestedSection">
+                    <div class="end-suggested-header">
+                        <div>
+                            <h3>Next up for you</h3>
+                            <p>Tap a thumbnail to continue watching another video.</p>
+                        </div>
+                    </div>
+                    <div class="end-suggested-grid" id="endSuggestedGrid"></div>
+                </section>
+
+                <!-- Custom Control Bar -->
+                <div class="custom-controls" id="customControls">
+                    
+                    <!-- Timeline Control -->
+                    <div class="timeline-container" id="timelineContainer">
+                        <div class="timeline">
+                            <div class="hover-playhead"></div>
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="controls-buttons">
+                        <div class="left-controls">
+                            <!-- Play/Pause Button -->
+                            <button class="control-btn" id="playPauseBtn" aria-label="Play or Pause">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <!-- Duration Counter -->
+                            <span class="time-display">
+                                <span id="currentTime">00:00</span> / <span id="totalDuration">00:00</span>
+                            </span>
+                        </div>
+
+                        <div class="right-controls">
+                            <!-- Volume Slider Toggle -->
+                            <button class="control-btn" id="volumeBtn" aria-label="Toggle Volume">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                            <!-- Fullscreen Toggle -->
+                            <button class="control-btn" id="fullscreenBtn" aria-label="Toggle Fullscreen">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title and Description details -->
+            <div class="video-details-card">
+                <h1 class="video-main-title" id="videoTitle">Loading Title...</h1>
+                
+                <div class="metadata-row">
+                    <span class="category-badge" id="videoCategory">Category</span>
+                    <span class="publish-date" id="videoDate"><i class="fa-solid fa-calendar-days"></i> Published Date</span>
+                </div>
+
+                <div class="description-box">
+                    <h4>Description</h4>
+                    <p id="videoDesc">Loading description details...</p>
+                    <div class="tags-container" id="tagsContainer">
+                        <!-- Dynamic Tags rendered here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Column: Sidebar Up Next Suggestions -->
+        <aside class="suggested-section">
+            <h3 class="sidebar-title">Up Next</h3>
+            
+            <div class="suggested-grid" id="suggestedContainer">
+                <!-- 10 Random Suggested Video cards + Ads rendered dynamically by app.js -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>VID65 Share</h3>
+                <p>Fast and highly responsive video sharing platform. Experience standard media layouts on any mobile or desktop screen.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VID65 Share. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App files dependencies -->
+    <script src="app.js"></script>
+    <script src="player.js"></script>
+</body>
+</html>

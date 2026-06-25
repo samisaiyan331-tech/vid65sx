@@ -1,0 +1,11 @@
+{
+  "name": "vid65-share",
+  "version": "1.0.0",
+  "description": "VID65 Share Video Directory platform build configuration",
+  "main": "generate.js",
+  "scripts": {
+    "build": "node generate.js"
+  },
+  "author": "VID65 Share",
+  "license": "ISC"
+}

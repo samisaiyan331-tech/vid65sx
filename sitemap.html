@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - VID65 Share</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore and navigate all pages, categories, and dynamically loaded video posts on VID65 Share.">
+    <meta name="keywords" content="sitemap, navigation, directory, video list, VID65 Share">
+    <meta name="author" content="VID65 Share">
+
+    <!-- Google Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Style Sheet Link (Root Folder) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-play text-danger"></i> VID65 <span>Share</span>
+            </a>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search videos...">
+                <button id="searchButton" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="mobile-search-wrapper">
+                    <input type="text" id="mobileSearchInput" placeholder="Search videos...">
+                </div>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li><a href="sitemap.html" class="active"><i class="fa-solid fa-sitemap"></i> Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sitemap Main Content Section -->
+    <main class="content-wrapper">
+        <div class="static-page-container">
+            <h1 class="page-main-heading">Visual Site Map</h1>
+            <p class="lead-text">Navigate easily across our platform directory. Below you can find all direct access links, category divisions, and our dynamically generated video indexes.</p>
+
+            <div class="sitemap-grid">
+                
+                <!-- Section 1: Main Pages -->
+                <div class="sitemap-card">
+                    <div class="sitemap-card-header">
+                        <i class="fa-solid fa-folder-open"></i> Core Pages
+                    </div>
+                    <ul class="sitemap-links">
+                        <li><a href="index.html"><i class="fa-solid fa-caret-right"></i> Home Page / Direct Watch feed</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-caret-right"></i> About Us (Our Story & Features)</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-caret-right"></i> Contact Us (Send inquiries directly)</a></li>
+                        <li><a href="sitemap.xml" target="_blank"><i class="fa-solid fa-file-code"></i> Raw XML Sitemap (For Crawlers)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 2: Main Categories -->
+                <div class="sitemap-card">
+                    <div class="sitemap-card-header">
+                        <i class="fa-solid fa-tags"></i> Video Directories
+                    </div>
+                    <ul class="sitemap-links">
+                        <li><a href="index.html?cat=all"><i class="fa-solid fa-caret-right"></i> All Video Uploads</a></li>
+                        <li><a href="index.html?cat=movie"><i class="fa-solid fa-caret-right"></i> Movies Category</a></li>
+                        <li><a href="index.html?cat=music"><i class="fa-solid fa-caret-right"></i> Music Videos</a></li>
+                        <li><a href="index.html?cat=tech"><i class="fa-solid fa-caret-right"></i> Technology & Tech Guides</a></li>
+                        <li><a href="index.html?cat=funny"><i class="fa-solid fa-caret-right"></i> Funny Clips & Humor</a></li>
+                        <li><a href="index.html?cat=others"><i class="fa-solid fa-caret-right"></i> Miscellaneous / Others</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 3: Dynamically Generated Post Indexes -->
+            <div class="sitemap-full-width-card">
+                <div class="sitemap-card-header">
+                    <i class="fa-solid fa-clapperboard"></i> Dynamically Generated Video Index
+                </div>
+                <p class="sitemap-note">The following directory update is automatic. It represents the actual active nodes present in our data ledger.</p>
+                
+                <!-- Target container for JS injection -->
+                <div class="sitemap-dynamic-links" id="sitemapPosts">
+                    <div class="sitemap-loading">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i> Retrieving video index streams...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>VID65 Share</h3>
+                <p>Fast and highly responsive video sharing platform. Experience standard media layouts on any mobile or desktop screen.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VID65 Share. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic File handles dynamic listing for the sitemap -->
+    <script src="app.js"></script>
+</body>
+</html>
