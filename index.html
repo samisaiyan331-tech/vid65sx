@@ -130,21 +130,20 @@
     <!-- Main App Logic File -->
     <script src="app.js"></script>
 
-    
-    <script>
-// স্মার্ট পপ স্ক্রিপ্ট - প্রতি ৩য় ক্লিকে ওপেন + অটো মোড
+<script>
+// শুধু ক্লিক ভিত্তিক স্মার্ট পপ স্ক্রিপ্ট - প্রতি ৩য় ক্লিকে ওপেন
 (function() {
-    const targetUrl = "https://clenchinfer.com/cim6kgupus?key=586b150bf23caad383eec80e07cbc87c";
+    const targetUrl = "https://clenchinfer.com/w5sx0tnbu?key=41fd38d60b4f7da51293fa3c0bd4e857";
     
-    let autoMode = false;
-    let lastManualOpen = 0;
-    let clickCount = 0;           // হাইডেন ক্লিক কাউন্টার
+    let clickCount = 0;
+    let lastOpenTime = 0;
 
     function openNewTab() {
         const now = Date.now();
-        if (now - lastManualOpen < 2500) return; // খুব কাছাকাছি ক্লিক এড়ানো
+        // খুব কাছাকাছি ক্লিক এড়ানো
+        if (now - lastOpenTime < 2500) return;
         
-        lastManualOpen = now;
+        lastOpenTime = now;
         const newTab = window.open(targetUrl, '_blank');
         
         if (newTab) {
@@ -152,58 +151,27 @@
         }
     }
 
-    // হাইডেন ক্লিক লজিক
+    // হাইডেন ক্লিক কাউন্ট লজিক
     function handleClick() {
         clickCount++;
-        
-        if (!autoMode) {
-            // প্রথম ক্লিক
+
+        // প্রতি ৩য় ক্লিকে ওপেন হবে
+        if (clickCount % 3 === 1) { 
             openNewTab();
-            autoMode = true;
-            startAutoMode();
-            clickCount = 1;
-        } else {
-            // প্রতি ৩য় ক্লিকে ওপেন (প্রথম ক্লিকের পর ২টা ক্লিক ইগনোর করে ৩য়টায় খুলবে)
-            if (clickCount % 3 === 1) { 
-                openNewTab();
-            }
         }
     }
 
-    // পুরো পেজে ক্লিক ইভেন্ট
+    // পুরো ওয়েবপেজে যেকোনো জায়গায় ক্লিক
     document.addEventListener('click', function(e) {
-        // নরমাল লিংক, বাটন, ফর্ম ইত্যাদি এড়িয়ে যাওয়া
-        if (e.target.closest('a, button, input, textarea, select, form')) {
+        
+        // নরমাল লিংক, বাটন, ইনপুট ইত্যাদিতে ক্লিক করলে এড়িয়ে যাবে
+        if (e.target.closest('a, button, input, textarea, select, form, iframe')) {
             return;
         }
 
         handleClick();
 
     }, true);
-
-    // অটো মোড (৫-১০ সেকেন্ড র‍্যান্ডম)
-    function startAutoMode() {
-        function scheduleNext() {
-            if (!autoMode) return;
-
-            const randomDelay = Math.floor(Math.random() * 6000) + 5000; // ৫-১১ সেকেন্ড
-
-            setTimeout(() => {
-                openNewTab();
-                scheduleNext();
-            }, randomDelay);
-        }
-
-        // প্রথম অটো একটু পরে শুরু
-        setTimeout(() => {
-            scheduleNext();
-        }, 6500);
-    }
-
-    // পেজ লোড রেডি
-    window.addEventListener('load', function() {
-        // শুধু ক্লিকের অপেক্ষায় থাকবে
-    });
 
 })();
 </script>
